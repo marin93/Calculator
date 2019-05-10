@@ -12,6 +12,10 @@
 		1C51960C2285C6FE00C70D66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C51960B2285C6FE00C70D66 /* Assets.xcassets */; };
 		1C51960F2285C6FE00C70D66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C51960D2285C6FE00C70D66 /* LaunchScreen.storyboard */; };
 		1C51961A2285C6FF00C70D66 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5196192285C6FF00C70D66 /* CalculatorTests.swift */; };
+		1C51962C2285CC7400C70D66 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5196292285CC7400C70D66 /* CalculatorViewModel.swift */; };
+		1C51962D2285CC7400C70D66 /* CalculatorViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51962A2285CC7400C70D66 /* CalculatorViewModelDelegate.swift */; };
+		1C51962E2285CC7400C70D66 /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C51962B2285CC7400C70D66 /* CalculatorViewController.xib */; };
+		1C5196302285CC7E00C70D66 /* CalculatorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51962F2285CC7E00C70D66 /* CalculatorBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 		1C5196152285C6FF00C70D66 /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C5196192285C6FF00C70D66 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
 		1C51961B2285C6FF00C70D66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C5196292285CC7400C70D66 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		1C51962A2285CC7400C70D66 /* CalculatorViewModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewModelDelegate.swift; sourceTree = "<group>"; };
+		1C51962B2285CC7400C70D66 /* CalculatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
+		1C51962F2285CC7E00C70D66 /* CalculatorBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +128,11 @@
 		1C5196282285CBF900C70D66 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				1C51962F2285CC7E00C70D66 /* CalculatorBuilder.swift */,
 				1C5196062285C6FD00C70D66 /* CalculatorViewController.swift */,
+				1C51962B2285CC7400C70D66 /* CalculatorViewController.xib */,
+				1C5196292285CC7400C70D66 /* CalculatorViewModel.swift */,
+				1C51962A2285CC7400C70D66 /* CalculatorViewModelDelegate.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -208,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C51960F2285C6FE00C70D66 /* LaunchScreen.storyboard in Resources */,
+				1C51962E2285CC7400C70D66 /* CalculatorViewController.xib in Resources */,
 				1C51960C2285C6FE00C70D66 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,7 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C5196072285C6FD00C70D66 /* CalculatorViewController.swift in Sources */,
+				1C51962C2285CC7400C70D66 /* CalculatorViewModel.swift in Sources */,
 				1C5196052285C6FD00C70D66 /* AppDelegate.swift in Sources */,
+				1C5196302285CC7E00C70D66 /* CalculatorBuilder.swift in Sources */,
+				1C51962D2285CC7400C70D66 /* CalculatorViewModelDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -388,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

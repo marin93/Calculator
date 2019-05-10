@@ -9,5 +9,5 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
-
+    var viewModel: CalculatorViewModel?
 }
