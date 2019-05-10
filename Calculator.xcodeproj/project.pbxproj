@@ -75,11 +75,9 @@
 		1C5196032285C6FD00C70D66 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				1C5196042285C6FD00C70D66 /* AppDelegate.swift */,
-				1C5196062285C6FD00C70D66 /* CalculatorViewController.swift */,
-				1C51960B2285C6FE00C70D66 /* Assets.xcassets */,
-				1C51960D2285C6FE00C70D66 /* LaunchScreen.storyboard */,
-				1C5196102285C6FE00C70D66 /* Info.plist */,
+				1C5196272285CBF400C70D66 /* Module */,
+				1C5196262285CBAB00C70D66 /* Other */,
+				1C5196252285CB9800C70D66 /* Resource */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -91,6 +89,40 @@
 				1C51961B2285C6FF00C70D66 /* Info.plist */,
 			);
 			path = CalculatorTests;
+			sourceTree = "<group>";
+		};
+		1C5196252285CB9800C70D66 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1C51960B2285C6FE00C70D66 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		1C5196262285CBAB00C70D66 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1C5196102285C6FE00C70D66 /* Info.plist */,
+				1C5196042285C6FD00C70D66 /* AppDelegate.swift */,
+				1C51960D2285C6FE00C70D66 /* LaunchScreen.storyboard */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		1C5196272285CBF400C70D66 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				1C5196282285CBF900C70D66 /* Calculator */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		1C5196282285CBF900C70D66 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				1C5196062285C6FD00C70D66 /* CalculatorViewController.swift */,
+			);
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,7 +404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28Z9Z598KN;
-				INFOPLIST_FILE = Calculator/Info.plist;
+				INFOPLIST_FILE = Calculator/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,7 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28Z9Z598KN;
-				INFOPLIST_FILE = Calculator/Info.plist;
+				INFOPLIST_FILE = Calculator/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
