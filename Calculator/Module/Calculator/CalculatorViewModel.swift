@@ -3,5 +3,91 @@
 import Foundation
 
 final class CalculatorViewModel {
+    private let operators = ["*", "/", "+", "-"]
+    private let brackets = ["(", ")"]
+    private let mathProvider = MathProvider()
+    var currentText = ""
     weak var delegate: CalculatorViewModelDelegate?
+
+    func userDidInput(value: String) {
+        if value == "AC" {
+            clearText()
+            return
+        }
+        if value == "=" {
+            calculate()
+            return
+        }
+        if value == "CE" && currentText.count > 0 {
+            currentText = String(currentText.dropLast())
+            updateTextField()
+            return
+        }
+        guard shouldInputValue(value) else {
+            return
+        }
+
+        currentText += value
+        updateTextField()
+    }
+
+    private func shouldInputValue(_ value: String) -> Bool {
+        if value == "(" {
+            return shouldInputOpenBracket()
+        }
+        if value == ")" {
+            return shouldInputOpenClosed()
+        }
+
+        //always allow if value is not a operator
+        guard operators.contains(value) else {
+            return true
+        }
+        //dont input operator if there is no number in front of it
+        guard currentText.count > 0 else {
+            return false
+        }
+        guard let last = currentText.last else {
+            return true
+        }
+        //If operator is last value, do not insert operator
+        if operators.contains("\(last)") {
+            return false
+        }
+        //If open bracket is last value, do not insert operator
+        if "(" == last {
+            return false
+        }
+        return true
+    }
+
+    private func shouldInputOpenBracket() -> Bool {
+        return true
+    }
+
+    private func shouldInputOpenClosed() -> Bool {
+        return true
+    }
+
+    private func calculate() {
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self else {
+                return
+            }
+            let result = self.mathProvider.calculate(expression: self.currentText)
+            DispatchQueue.main.async {
+                self.currentText = "\(result)"
+                self.updateTextField()
+            }
+        }
+    }
+
+    private func clearText() {
+        currentText = ""
+        updateTextField()
+    }
+
+    private func updateTextField() {
+        delegate?.updateTextField(with: currentText)
+    }
 }

@@ -14,6 +14,9 @@ class CalculatorViewController: UIViewController {
     var viewModel: CalculatorViewModel?
 
     @IBAction func onButtonClick(_ sender: Any) {
+        let button = sender as? UIButton
+        let input = button?.currentTitle ?? ""
+        viewModel?.userDidInput(value: input)
     }
 }
 
