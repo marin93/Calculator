@@ -62,10 +62,29 @@ final class CalculatorViewModel {
     }
 
     private func shouldInputOpenBracket() -> Bool {
+        guard let last = currentText.last else {
+            return true
+        }
+        if last == "(" {
+            return false
+        }
         return true
     }
 
     private func shouldInputOpenClosed() -> Bool {
+        guard let last = currentText.last else {
+            return false
+        }
+        let openBracketCount = currentText.components(separatedBy: "(").count - 1
+        let closedBracketCount = currentText.components(separatedBy: ")").count - 1
+
+        if openBracketCount <= closedBracketCount {
+            return false
+        }
+        if last == "(" || last == ")" || operators.contains("\(last)") {
+            return false
+        }
+
         return true
     }
 
