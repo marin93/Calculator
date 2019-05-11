@@ -3,5 +3,5 @@
 import Foundation
 
 protocol CalculatorViewModelDelegate: class {
-
+    func updateTextField(with text: String)
 }

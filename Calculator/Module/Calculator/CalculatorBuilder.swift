@@ -11,6 +11,7 @@ final class CalculatorBuilder {
         }
         let viewModel = CalculatorViewModel()
         viewController.viewModel = viewModel
+        viewModel.delegate = viewController
         return viewController
     }
 }

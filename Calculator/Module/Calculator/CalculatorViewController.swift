@@ -9,5 +9,17 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
+    @IBOutlet weak var textField: UITextField?
+
     var viewModel: CalculatorViewModel?
+
+    @IBAction func onButtonClick(_ sender: Any) {
+    }
+}
+
+// MARK: - CalculatorViewModelDelegate
+extension CalculatorViewController: CalculatorViewModelDelegate {
+    func updateTextField(with text: String) {
+        textField?.text = text
+    }
 }
