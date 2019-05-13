@@ -17,6 +17,8 @@
 		1C51962E2285CC7400C70D66 /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C51962B2285CC7400C70D66 /* CalculatorViewController.xib */; };
 		1C5196302285CC7E00C70D66 /* CalculatorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51962F2285CC7E00C70D66 /* CalculatorBuilder.swift */; };
 		1C7A4B682286DCCD003C9907 /* MathProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A4B672286DCCD003C9907 /* MathProvider.swift */; };
+		1C7A4B6A2288C1B7003C9907 /* MathProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A4B692288C1B7003C9907 /* MathProviderTests.swift */; };
+		1CE7098D2289F3FC0005427B /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7098C2289F3FC0005427B /* InputValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		1C51962B2285CC7400C70D66 /* CalculatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
 		1C51962F2285CC7E00C70D66 /* CalculatorBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBuilder.swift; sourceTree = "<group>"; };
 		1C7A4B672286DCCD003C9907 /* MathProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathProvider.swift; sourceTree = "<group>"; };
+		1C7A4B692288C1B7003C9907 /* MathProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathProviderTests.swift; sourceTree = "<group>"; };
+		1CE7098C2289F3FC0005427B /* InputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +89,7 @@
 		1C5196032285C6FD00C70D66 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				1C7A4B662286DCBE003C9907 /* Provider */,
+				1C7A4B662286DCBE003C9907 /* Utils */,
 				1C5196272285CBF400C70D66 /* Module */,
 				1C5196262285CBAB00C70D66 /* Other */,
 				1C5196252285CB9800C70D66 /* Resource */,
@@ -98,6 +102,7 @@
 			children = (
 				1C5196192285C6FF00C70D66 /* CalculatorTests.swift */,
 				1C51961B2285C6FF00C70D66 /* Info.plist */,
+				1C7A4B692288C1B7003C9907 /* MathProviderTests.swift */,
 			);
 			path = CalculatorTests;
 			sourceTree = "<group>";
@@ -140,12 +145,13 @@
 			path = Calculator;
 			sourceTree = "<group>";
 		};
-		1C7A4B662286DCBE003C9907 /* Provider */ = {
+		1C7A4B662286DCBE003C9907 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				1C7A4B672286DCCD003C9907 /* MathProvider.swift */,
+				1CE7098C2289F3FC0005427B /* InputValidator.swift */,
 			);
-			path = Provider;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +281,7 @@
 				1C51962C2285CC7400C70D66 /* CalculatorViewModel.swift in Sources */,
 				1C5196052285C6FD00C70D66 /* AppDelegate.swift in Sources */,
 				1C5196302285CC7E00C70D66 /* CalculatorBuilder.swift in Sources */,
+				1CE7098D2289F3FC0005427B /* InputValidator.swift in Sources */,
 				1C7A4B682286DCCD003C9907 /* MathProvider.swift in Sources */,
 				1C51962D2285CC7400C70D66 /* CalculatorViewModelDelegate.swift in Sources */,
 			);
@@ -284,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C7A4B6A2288C1B7003C9907 /* MathProviderTests.swift in Sources */,
 				1C51961A2285C6FF00C70D66 /* CalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

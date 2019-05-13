@@ -3,9 +3,8 @@
 import Foundation
 
 final class CalculatorViewModel {
-    private let operators = ["*", "/", "+", "-"]
-    private let brackets = ["(", ")"]
     private let mathProvider = MathProvider()
+    private let validator = InputValidator()
     var currentText = ""
     weak var delegate: CalculatorViewModelDelegate?
 
@@ -23,69 +22,13 @@ final class CalculatorViewModel {
             updateTextField()
             return
         }
-        guard shouldInputValue(value) else {
+
+        guard validator.shouldInputValue(value, currentText: currentText) else {
             return
         }
 
         currentText += value
         updateTextField()
-    }
-
-    private func shouldInputValue(_ value: String) -> Bool {
-        if value == "(" {
-            return shouldInputOpenBracket()
-        }
-        if value == ")" {
-            return shouldInputOpenClosed()
-        }
-
-        //always allow if value is not a operator
-        guard operators.contains(value) else {
-            return true
-        }
-        //dont input operator if there is no number in front of it
-        guard currentText.count > 0 else {
-            return false
-        }
-        guard let last = currentText.last else {
-            return true
-        }
-        //If operator is last value, do not insert operator
-        if operators.contains("\(last)") {
-            return false
-        }
-        //If open bracket is last value, do not insert operator
-        if "(" == last {
-            return false
-        }
-        return true
-    }
-
-    private func shouldInputOpenBracket() -> Bool {
-        guard let last = currentText.last else {
-            return true
-        }
-        if last == "(" {
-            return false
-        }
-        return true
-    }
-
-    private func shouldInputOpenClosed() -> Bool {
-        guard let last = currentText.last else {
-            return false
-        }
-        let openBracketCount = currentText.components(separatedBy: "(").count - 1
-        let closedBracketCount = currentText.components(separatedBy: ")").count - 1
-
-        if openBracketCount <= closedBracketCount {
-            return false
-        }
-        if last == "(" || last == ")" || operators.contains("\(last)") {
-            return false
-        }
-
-        return true
     }
 
     private func calculate() {
