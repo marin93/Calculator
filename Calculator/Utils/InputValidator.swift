@@ -10,7 +10,6 @@ import Foundation
 
 final class InputValidator {
     private let operators = ["*", "/", "+", "-"]
-    private let brackets = ["(", ")"]
 
     func shouldInputValue(_ value: String, currentText: String) -> Bool {
         if value == "(" {
