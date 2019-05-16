@@ -17,7 +17,10 @@ final class CalculatorViewModel {
             calculate()
             return
         }
-        if value == "CE" && currentText.count > 0 {
+        if value == "CE" {
+            if currentText.count == 0 {
+                return
+            }
             currentText = String(currentText.dropLast())
             updateTextField()
             return
